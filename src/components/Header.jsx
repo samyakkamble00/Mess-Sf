@@ -76,9 +76,9 @@ const Header = () => {
             <Link to={"/about"} className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
               About Us
             </Link>
-            <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
+            <Link to={"/service"} className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
               Service
-            </li>
+            </Link>
           </motion.ul>
 
           <div
