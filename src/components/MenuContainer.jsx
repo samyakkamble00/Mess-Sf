@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { IoFastFood } from "react-icons/io5";
+import { FaCity } from "react-icons/fa";
 import { categories } from "../utils/data";
 import { motion } from "framer-motion";
 import RowContainer from "./RowContainer";
@@ -19,25 +19,25 @@ const MenuContainer = () => {
 
         <div className="w-full flex items-center justify-start lg:justify-center gap-8 py-6 overflow-x-scroll scrollbar-none">
           {categories &&
-            categories.map((category) => (
+            categories.map((address) => (
               <motion.div
                 whileTap={{ scale: 0.75 }}
-                key={category.id}
+                key={address.id}
                 className={`group ${
-                  filter === category.urlParamName ? "bg-cartNumBg" : "bg-card"
+                  filter === address.urlParamName ? "bg-cartNumBg" : "bg-card"
                 } w-24 min-w-[94px] h-28 cursor-pointer rounded-lg drop-shadow-xl flex flex-col gap-3 items-center justify-center hover:bg-cartNumBg `}
-                onClick={() => setFilter(category.urlParamName)}
+                onClick={() => setFilter(address.urlParamName)}
               >
                 <div
                   className={`w-10 h-10 rounded-full shadow-lg ${
-                    filter === category.urlParamName
+                    filter === address.urlParamName
                       ? "bg-white"
                       : "bg-cartNumBg"
                   } group-hover:bg-white flex items-center justify-center`}
                 >
-                  <IoFastFood
+                  <FaCity
                     className={`${
-                      filter === category.urlParamName
+                      filter === address.urlParamName
                         ? "text-textColor"
                         : "text-white"
                     } group-hover:text-textColor text-lg`}
@@ -45,12 +45,12 @@ const MenuContainer = () => {
                 </div>
                 <p
                   className={`text-sm ${
-                    filter === category.urlParamName
+                    filter === address.urlParamName
                       ? "text-white"
                       : "text-textColor"
                   } group-hover:text-white`}
                 >
-                  {category.name}
+                  {address.name}
                 </p>
               </motion.div>
             ))}
@@ -59,7 +59,7 @@ const MenuContainer = () => {
         <div className="w-full">
           <RowContainer
             flag={false}
-            data={foodItems?.filter((n) => n.category == filter)}
+            data={foodItems?.filter((n) => n.address == filter)}
           />
         </div>
       </div>

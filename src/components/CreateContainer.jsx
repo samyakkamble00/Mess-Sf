@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-
-import {
-  MdFastfood,
+import { FaCity , FaIndianRupeeSign } from "react-icons/fa6";
+import {  
   MdCloudUpload,
   MdDelete,
   MdFoodBank,
-  MdAttachMoney,
 } from "react-icons/md";
 import { categories } from "../utils/data";
 import Loader from "./Loader";
@@ -25,7 +23,7 @@ const CreateContainer = () => {
   const [title, setTitle] = useState("");
   const [calories, setCalories] = useState("");
   const [price, setPrice] = useState("");
-  const [category, setCategory] = useState(null);
+  const [address, setAddress] = useState(null);
   const [imageAsset, setImageAsset] = useState(null);
   const [fields, setFields] = useState(false);
   const [alertStatus, setAlertStatus] = useState("danger");
@@ -88,7 +86,7 @@ const CreateContainer = () => {
   const saveDetails = () => {
     setIsLoading(true);
     try {
-      if (!title || !calories || !imageAsset || !price || !category) {
+      if (!title || !calories || !imageAsset || !price || !address) {
         setFields(true);
         setMsg("Required fields can't be empty");
         setAlertStatus("danger");
@@ -101,8 +99,8 @@ const CreateContainer = () => {
           id: `${Date.now()}`,
           title: title,
           imageURL: imageAsset,
-          category: category,
-          calories: calories,
+          address: address,
+          es: calories,
           qty: 1,
           price: price,
         };
@@ -135,7 +133,7 @@ const CreateContainer = () => {
     setImageAsset(null);
     setCalories("");
     setPrice("");
-    setCategory("Select Category");
+    setAddress("Select address");
   };
 
   const fetchData = async () => {
@@ -166,20 +164,20 @@ const CreateContainer = () => {
         )}
 
         <div className="w-full py-2 border-b border-gray-300 flex items-center gap-2">
-          <MdFastfood className="text-xl text-gray-700" />
+          <FaCity className="text-xl text-gray-700" />
           <input
             type="text"
             required
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder="Give me a title..."
+            placeholder="Give Mess title..."
             className="w-full h-full text-lg bg-transparent outline-none border-none placeholder:text-gray-400 text-textColor"
           />
         </div>
 
         <div className="w-full">
           <select
-            onChange={(e) => setCategory(e.target.value)}
+            onChange={(e) => setAddress(e.target.value)}
             className="outline-none w-full text-base border-b-2 border-gray-200 p-2 rounded-md cursor-pointer"
           >
             <option value="other" className="bg-white">
@@ -251,13 +249,13 @@ const CreateContainer = () => {
               required
               value={calories}
               onChange={(e) => setCalories(e.target.value)}
-              placeholder="Calories"
+              placeholder="address"
               className="w-full h-full text-lg bg-transparent outline-none border-none placeholder:text-gray-400 text-textColor"
             />
           </div>
 
           <div className="w-full py-2 border-b border-gray-300 flex items-center gap-2">
-            <MdAttachMoney className="text-gray-700 text-2xl" />
+          <FaIndianRupeeSign className="text-gray-700 text-2xl" />
             <input
               type="text"
               required

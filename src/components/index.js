@@ -9,3 +9,7 @@ export { default as CartContainer } from "./CartContainer";
 export { default as CartItem } from "./CartItem";
 export { default as AboutUs } from "./AboutUs";
 export { default as Service } from "./Service";
+export { default as Footer } from "./Footer";
+export { default as SignUp } from "./SignUp";
+export { default as LogIn } from "./LogIn";
+export { default as ForBusiness } from "./ForBusiness";
