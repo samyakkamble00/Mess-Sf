@@ -1,33 +1,38 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const LogIn = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2">
-      <div className="flex items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
+    <section className="rounded-md ">
+      <div className="flex items-center justify-center  px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
         <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
-          <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl">
-            Sign in
-          </h2>
-          <p className="mt-2 text-sm text-gray-600">
-            Don&apos;t have an account?{" "}
-            <a
-              href="#"
-              title=""
+          <div className="mb-2">
+            <svg
+              width="50"
+              height="56"
+              viewBox="0 0 50 56"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              
+            </svg>
+          </div>
+          <h2 className="text-2xl font-bold leading-tight text-black">Sign in to your account</h2>
+          <p className="mt-2text-sm text-gray-600 ">
+            Don&apos;t have an account?{' '}
+            <Link to={"/signup"}
               className="font-semibold text-black transition-all duration-200 hover:underline"
             >
               Create a free account
-            </a>
+            </Link>
           </p>
           <form action="#" method="POST" className="mt-8">
             <div className="space-y-5">
               <div>
-                <label
-                  htmlFor=""
-                  className="text-base font-medium text-gray-900"
-                >
-                  {" "}
-                  Email address{" "}
+                <label htmlFor="" className="text-base font-medium text-gray-900">
+                  {' '}
+                  Email address{' '}
                 </label>
                 <div className="mt-2">
                   <input
@@ -39,20 +44,13 @@ const LogIn = () => {
               </div>
               <div>
                 <div className="flex items-center justify-between">
-                  <label
-                    htmlFor=""
-                    className="text-base font-medium text-gray-900"
-                  >
-                    {" "}
-                    Password{" "}
+                  <label htmlFor="" className="text-base font-medium text-gray-900">
+                    {' '}
+                    Password{' '}
                   </label>
-                  <a
-                    href="#"
-                    title=""
-                    className="text-sm font-semibold text-black hover:underline"
-                  >
-                    {" "}
-                    Forgot password?{" "}
+                  <a href="#" title="" className="text-sm font-semibold text-black hover:underline">
+                    {' '}
+                    Forgot password?{' '}
                   </a>
                 </div>
                 <div className="mt-2">
@@ -109,8 +107,8 @@ const LogIn = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </section>
+  )
 };
 
 export default LogIn;

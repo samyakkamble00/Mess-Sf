@@ -2,12 +2,12 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="w-full">
+    <footer className="w-full m-10">
       <div className="mx-auto flex max-w-6xl flex-col items-start space-x-8 md:flex-row">
-        <div className="mt-8 grid grid-cols-2 gap-6 md:mt-0 lg:w-3/4 lg:grid-cols-3">
+        <div className="mt-8 grid grid-cols-2 gap-6 md:mt-0 lg:w-3/4 lg:grid-cols-3 md:flex md:flex-wrap ">
           {Array.from({ length: 3 }).map((_, i) => (
-            <div key={i} className="mb-8 lg:mb-0">
-              <p className="mb-6 text-lg font-semibold text-gray-700 ">
+            <div key={i} className="mb-8 lg:mb-0 md:w-full">
+              <p className="mb-6 md:xl text-lg font-semibold text-gray-700 ">
                 Company
               </p>
               <ul className="flex flex-col space-y-4 text-[14px] font-medium text-gray-500">

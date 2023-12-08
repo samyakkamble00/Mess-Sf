@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { app } from "../firbase.config";
 
-import Logo from "../img/logo.png";
 import Avatar from "../img/avatar.png";
 import { Link } from "react-router-dom";
 import { useStateValue } from "../context/StateProvider";
@@ -66,26 +65,47 @@ const Header = () => {
             exit={{ opacity: 0, x: 200 }}
             className="flex items-center gap-8 "
           >
-            <Link to={"/"} className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
+            <Link
+              to={"/"}
+              className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer"
+            >
               Home
             </Link>
-            <Link to={"/menu"} className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
+            <Link
+              to={"/menu"}
+              className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer"
+            >
               Menu
             </Link>
-            <Link to={"/about"} className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
+            <Link
+              to={"/about"}
+              className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer"
+            >
               About Us
             </Link>
-            <Link to={"/service"} className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
+            <Link
+              to={"/service"}
+              className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer"
+            >
               Service
             </Link>
-            <Link to={"/signup"} className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
+            <Link
+              to={"/signup"}
+              className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer"
+            >
               SignUp
             </Link>
-            <Link to={"/login"} className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
-             LogIn
+            <Link
+              to={"/login"}
+              className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer"
+            >
+              LogIn
             </Link>
-            <Link to={"/forbusiness"} className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
-             For Business
+            <Link
+              to={"/forbusiness"}
+              className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer"
+            >
+              For Business
             </Link>
           </motion.ul>
 
@@ -111,7 +131,7 @@ const Header = () => {
               alt="userprofile"
               onClick={login}
             />
-            {isMenu && (  
+            {isMenu && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.6 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -158,8 +178,7 @@ const Header = () => {
         </div>
 
         <Link to={"/"} className="flex items-center gap-2">
-          <img src={Logo} className="w-8 object-cover" alt="logo" />
-          <p className="text-headingColor text-xl font-bold"> City</p>
+          <p className="text-headingColor text-xl font-bold"> MessThali</p>
         </Link>
 
         <div className="relative">
@@ -186,32 +205,58 @@ const Header = () => {
               )}
 
               <ul className="flex flex-col ">
-                <li
+                <Link
+                  to={"/"}
                   className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
                   onClick={() => setIsMenu(false)}
                 >
                   Home
-                </li>
-                <li
+                </Link>
+                <Link
+                  to={"/menu"}
                   className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
                   onClick={() => setIsMenu(false)}
                 >
                   Menu
-                </li>
-                <li
+                </Link>
+                <Link
+                  to={"/about"}
                   className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
                   onClick={() => setIsMenu(false)}
                 >
                   About Us
-                </li>
-                <li
+                </Link>
+                          
+                
+                <Link
+                  to={"/service"}
                   className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
                   onClick={() => setIsMenu(false)}
                 >
                   Service
-                </li>
+                </Link>
+                <Link
+                  to={"/login"}
+                  className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
+                  onClick={() => setIsMenu(false)}
+                >
+                  LogIn
+                </Link>
+                <Link
+                  to={"/signup"}
+                  className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
+                  onClick={() => setIsMenu(false)}
+                >
+                  Signup
+                </Link>
+                <Link
+                  to={"/forbusiness"}
+                  className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
+                  onClick={() => setIsMenu(false)}
+                >
+                  For Business
+                </Link>
               </ul>
-
               <p
                 className="m-2 p-2 rounded-md shadow-md flex items-center justify-center bg-gray-200 gap-3 cursor-pointer hover:bg-gray-300 transition-all duration-100 ease-in-out text-textColor text-base"
                 onClick={logout}

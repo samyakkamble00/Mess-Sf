@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 const SignUp = () => {
   return (
     <div>
@@ -12,13 +13,12 @@ const SignUp = () => {
             </h2>
             <p className="mt-2 text-base text-gray-600">
               Already have an account?{" "}
-              <a
-                href="#"
-                title=""
+              <Link to={"/login"}
+                
                 className="font-medium text-black transition-all duration-200 hover:underline"
               >
                 Sign In
-              </a>
+              </Link>
             </p>
             <form action="#" method="POST" className="mt-8">
               <div className="space-y-5">

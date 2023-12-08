@@ -13,3 +13,4 @@ export { default as Footer } from "./Footer";
 export { default as SignUp } from "./SignUp";
 export { default as LogIn } from "./LogIn";
 export { default as ForBusiness } from "./ForBusiness";
+export { default as NoPage } from "./NoPage";
