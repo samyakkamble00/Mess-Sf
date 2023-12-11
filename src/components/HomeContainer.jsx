@@ -1,5 +1,4 @@
 import React from "react";
-import Delivery from "../img/delivery.png";
 import { MdLocationOn } from "react-icons/md";
 const HomeContainer = () => {
   return (
@@ -17,9 +16,9 @@ const HomeContainer = () => {
         </div>
 
         <p className="text-[2.5rem] lg:text-[4.5rem] font-bold tracking-wide text-headingColor">
-          Best Mess Near
-          <span className="text-orange-600 text-[3rem] lg:text-[5rem]">
-            Your
+          Best Mess Near &nbsp; 
+          <span className="text-orange-600 text-[3rem] -ml-4 lg:text-[5rem]">
+           You
           </span>
         </p>
 
@@ -30,12 +29,7 @@ const HomeContainer = () => {
           suscipit!
         </p>
 
-        <button
-          type="button"
-          className="bg-gradient-to-br from-orange-400 to-orange-500 w-full md:w-auto px-4 py-2  rounded-lg hover:shadow-lg transition-all ease-in-out duration-100"
-        >
-          Book Now
-        </button>
+       
       </div>
       <div className="py-2 flex-1 flex items-center relative h-420 lg:h-650 bg-blue-500">
         

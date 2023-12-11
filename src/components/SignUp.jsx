@@ -1,11 +1,34 @@
-import React from 'react'
+import React from "react";
 import { FaArrowRight } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+
+import { app } from "../firbase.config";
+import { useStateValue } from "../context/StateProvider";
+import { actionType } from "../context/reducer";
+
 const SignUp = () => {
+  const [{ user }, dispatch] = useStateValue();
+
+  const login = async () => {
+    if (!user) {
+      const {
+        user: { refreshToken, providerData },
+      } = await signInWithPopup(firebaseAuth, provider);
+      dispatch({
+        type: actionType.SET_USER,
+        user: providerData[0],
+      });
+      localStorage.setItem("user", JSON.stringify(providerData[0]));
+    } else {
+    }
+  };
+  const firebaseAuth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+
   return (
     <div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-2">
+      <div className="grid grid-cols-1 ">
         <div className="flex items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
           <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
             <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl">
@@ -13,8 +36,8 @@ const SignUp = () => {
             </h2>
             <p className="mt-2 text-base text-gray-600">
               Already have an account?{" "}
-              <Link to={"/login"}
-                
+              <Link
+                to={"/login"}
                 className="font-medium text-black transition-all duration-200 hover:underline"
               >
                 Sign In
@@ -76,12 +99,12 @@ const SignUp = () => {
                   </div>
                 </div>
                 <div>
-                  <button
+                  <Link
                     type="button"
                     className="inline-flex w-full items-center justify-center rounded-md bg-black px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
                   >
                     Create Account <FaArrowRight className="ml-2" size={16} />
-                  </button>
+                  </Link>
                 </div>
               </div>
             </form>
@@ -89,6 +112,7 @@ const SignUp = () => {
               <button
                 type="button"
                 className="relative inline-flex w-full items-center justify-center rounded-md border border-gray-400 bg-white px-3.5 py-2.5 font-semibold text-gray-700 transition-all duration-200 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black focus:outline-none"
+                onClick={login}
               >
                 <span className="mr-2 inline-block">
                   <svg
@@ -100,9 +124,9 @@ const SignUp = () => {
                     <path d="M20.283 10.356h-8.327v3.451h4.792c-.446 2.193-2.313 3.453-4.792 3.453a5.27 5.27 0 0 1-5.279-5.28 5.27 5.27 0 0 1 5.279-5.279c1.259 0 2.397.447 3.29 1.178l2.6-2.599c-1.584-1.381-3.615-2.233-5.89-2.233a8.908 8.908 0 0 0-8.934 8.934 8.907 8.907 0 0 0 8.934 8.934c4.467 0 8.529-3.249 8.529-8.934 0-.528-.081-1.097-.202-1.625z"></path>
                   </svg>
                 </span>
-                Sign up with Google
+                Sign in with Google
               </button>
-              <button
+              {/*   <button
                 type="button"
                 className="relative inline-flex w-full items-center justify-center rounded-md border border-gray-400 bg-white px-3.5 py-2.5 font-semibold text-gray-700 transition-all duration-200 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black focus:outline-none"
               >
@@ -117,14 +141,13 @@ const SignUp = () => {
                   </svg>
                 </span>
                 Sign up with Facebook
-              </button>
+  </button> */}
             </div>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default SignUp
-
+export default SignUp;

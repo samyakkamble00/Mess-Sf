@@ -37,8 +37,8 @@ export const heroData = [
 export const categories = [
   {
     id: 1,
-    name: "Mumbai",
-    urlParamName: "Mumbai",
+    name: "Pune",
+    urlParamName: "Pune",
   },
   {
     id: 2,
@@ -57,33 +57,33 @@ export const categories = [
   },
   {
     id: 5,
-    name: "Ahmedabad",
-    urlParamName: "Ahmedabad",
+    name: "Mumbai",
+    urlParamName: "Mumbai",
   },
-  {
-    id: 6,
-    name: "Chennai",
-    urlParamName: "Chennai",
-  },
+  // {
+  //   id: 6,
+  //   name: "Chennai",
+  //   urlParamName: "Chennai",
+  // },
 
-  {
-    id: 7,
-    name: "Kolkata",
-    urlParamName: "Kolkata",
-  },
-  {
-    id: 8,
-    name: "Surat",
-    urlParamName: "Surat",
-  },
-  {
-    id: 9,
-    name: "Pune",
-    urlParamName: "Pune",
-  },
-  {
-    id: 10,
-    name: "Jaipur",
-    urlParamName: "Jaipur",
-  },
+  // {
+  //   id: 7,
+  //   name: "Kolkata",
+  //   urlParamName: "Kolkata",
+  // },
+  // {
+  //   id: 8,
+  //   name: "Surat",
+  //   urlParamName: "Surat",
+  // },
+  // {
+  //   id: 9,
+  //   name: "Mumbai",
+  //   urlParamName: "Mumbai",
+  // },
+  // {
+  //   id: 10,
+  //   name: "Jaipur",
+  //   urlParamName: "Jaipur",
+  // },
 ];

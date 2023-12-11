@@ -63,7 +63,7 @@ const CartContainer = () => {
       {cartItems && cartItems.length > 0 ? (
         <div className="w-full h-full bg-cartBg rounded-t-[2rem] flex flex-col">
           {/* cart Items section */}
-          <div className="w-full h-340 md:h-42 px-6 py-10 flex flex-col gap-3 overflow-y-scroll scrollbar-none">
+          <div className="w-full h-5/6 md:h-42 px-4 py-8 flex flex-col gap-3 overflow-y-scroll scrollbar-none">
             {/* cart Item */}
             {cartItems &&
               cartItems.length > 0 &&
@@ -79,32 +79,16 @@ const CartContainer = () => {
 
           {/* cart total section */}
           <div className="w-full flex-1 bg-cartTotal rounded-t-[2rem] flex flex-col items-center justify-evenly px-8 py-2">
-            <div className="w-full flex items-center justify-between">
-              <p className="text-gray-400 text-lg">Sub Total</p>
-              <p className="text-gray-400 text-lg">Rs {tot}</p>
-            </div>
-            <div className="w-full flex items-center justify-between">
-              <p className="text-gray-400 text-lg">Delivery</p>
-              <p className="text-gray-400 text-lg">Rs 2.5</p>
-            </div>
-
-            <div className="w-full border-b border-gray-600 my-2"></div>
-
+           
             <div className="w-full flex items-center justify-between">
               <p className="text-gray-200 text-xl font-semibold">Total</p>
               <p className="text-gray-200 text-xl font-semibold">
-                Rs{tot + 2.5}
+                Rs{tot}
               </p>
             </div>
 
             {user ? (
-              <motion.button
-                whileTap={{ scale: 0.8 }}
-                type="button"
-                className="w-full p-2 rounded-full bg-gradient-to-tr from-orange-400 to-orange-600 text-gray-50 text-lg my-2 hover:shadow-lg"
-              >
-                Check Out
-              </motion.button>
+             <></>
             ) : (
               <motion.button
                 whileTap={{ scale: 0.8 }}

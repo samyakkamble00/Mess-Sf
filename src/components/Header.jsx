@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { MdShoppingBasket, MdAdd, MdLogout } from "react-icons/md";
 import { motion } from "framer-motion";
-
+import { IoMenu } from "react-icons/io5";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { app } from "../firbase.config";
-
 import Avatar from "../img/avatar.png";
 import { Link } from "react-router-dom";
 import { useStateValue } from "../context/StateProvider";
@@ -13,9 +12,7 @@ import { actionType } from "../context/reducer";
 const Header = () => {
   const firebaseAuth = getAuth(app);
   const provider = new GoogleAuthProvider();
-
   const [{ user, cartShow, cartItems }, dispatch] = useStateValue();
-
   const [isMenu, setIsMenu] = useState(false);
 
   const login = async () => {
@@ -77,24 +74,7 @@ const Header = () => {
             >
               Menu
             </Link>
-            <Link
-              to={"/about"}
-              className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer"
-            >
-              About Us
-            </Link>
-            <Link
-              to={"/service"}
-              className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer"
-            >
-              Service
-            </Link>
-            <Link
-              to={"/signup"}
-              className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer"
-            >
-              SignUp
-            </Link>
+
             <Link
               to={"/login"}
               className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer"
@@ -103,7 +83,7 @@ const Header = () => {
             </Link>
             <Link
               to={"/forbusiness"}
-              className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer"
+              className="text-lg text-textColor border-2 border-black rounded-full p-1 px-2 hover:shadow-black hover:shadow hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer"
             >
               For Business
             </Link>
@@ -122,7 +102,14 @@ const Header = () => {
               </div>
             )}
           </div>
-
+          <motion.div whileTap={{ scale: 0.6 }} className="text-2xl">
+            <IoMenu
+              src={user ? user.photoURL : Avatar}
+              className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer rounded-full"
+              alt="userprofile"
+              onClick={login}
+            />
+          </motion.div>
           <div className="relative">
             <motion.img
               whileTap={{ scale: 0.6 }}
@@ -148,7 +135,28 @@ const Header = () => {
                     </p>
                   </Link>
                 )}
+                <Link
+                  to={"/signup"}
+                  className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
+                  onClick={() => setIsMenu(false)}
+                >
+                  Signup
+                </Link>
+                <Link
+                  to={"/about"}
+                  className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
+                  onClick={() => setIsMenu(false)}
+                >
+                  About Us
+                </Link>
 
+                <Link
+                  to={"/service"}
+                  className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"
+                  onClick={() => setIsMenu(false)}
+                >
+                  Service
+                </Link>
                 <p
                   className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base"
                   onClick={logout}
@@ -180,7 +188,15 @@ const Header = () => {
         <Link to={"/"} className="flex items-center gap-2">
           <p className="text-headingColor text-xl font-bold"> MessThali</p>
         </Link>
-
+        <div className="relative">
+          <motion.div
+            whileTap={{ scale: 0.6 }}
+            className="w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer rounded-full"
+            onClick={login}
+          >
+            <IoMenu className="text-3xl" />
+          </motion.div>
+        </div>
         <div className="relative">
           <motion.img
             whileTap={{ scale: 0.6 }}
@@ -226,8 +242,7 @@ const Header = () => {
                 >
                   About Us
                 </Link>
-                          
-                
+
                 <Link
                   to={"/service"}
                   className="text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer hover:bg-slate-100 px-4 py-2"

@@ -1,8 +1,32 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
+import { app } from "../firbase.config";
+import { useStateValue } from "../context/StateProvider";
+import { actionType } from "../context/reducer";
 const LogIn = () => {
+  const [{ user }, dispatch] = useStateValue();
+
+  const login = async () => {
+    if (!user) {
+      const {
+        user: { refreshToken, providerData },
+      } = await signInWithPopup(firebaseAuth, provider);
+      dispatch({
+        type: actionType.SET_USER,
+        user: providerData[0],
+      });
+      localStorage.setItem("user", JSON.stringify(providerData[0]));
+    } else {
+      
+    }
+  };
+  const firebaseAuth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+
+
   return (
     <section className="rounded-md ">
       <div className="flex items-center justify-center  px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
@@ -75,6 +99,7 @@ const LogIn = () => {
             <button
               type="button"
               className="relative inline-flex w-full items-center justify-center rounded-md border border-gray-400 bg-white px-3.5 py-2.5 font-semibold text-gray-700 transition-all duration-200 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black focus:outline-none"
+              onClick={login}
             >
               <span className="mr-2 inline-block">
                 <svg
@@ -88,7 +113,7 @@ const LogIn = () => {
               </span>
               Sign in with Google
             </button>
-            <button
+            {/*<button
               type="button"
               className="relative inline-flex w-full items-center justify-center rounded-md border border-gray-400 bg-white px-3.5 py-2.5 font-semibold text-gray-700 transition-all duration-200 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black focus:outline-none"
             >
@@ -103,7 +128,7 @@ const LogIn = () => {
                 </svg>
               </span>
               Sign in with Facebook
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
