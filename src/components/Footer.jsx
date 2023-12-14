@@ -29,9 +29,9 @@ const Footer = () => {
               About
             </p>
             <ul className="flex flex-col space-y-4 text-[14px] font-medium text-gray-500">
-              <li className="text-base">Site Map</li>
-              <li className="text-base">Career</li>
-              <li className="text-base">Customer Support</li>
+              <li className="text-base hover:text-black">Site Map</li>
+              <li className="text-base hover:text-black">Career</li>
+              <li className="text-base hover:text-black">Customer Support</li>
             </ul>
           </div>
           <div className=" w-[200px] flex flex-col ">
@@ -39,8 +39,8 @@ const Footer = () => {
               For Business
             </p>
             <ul className="flex flex-col space-y-4 text-[14px] font-medium text-gray-500">
-              <li className="text-base">Price</li>
-              <li className="text-base">Support</li>
+              <li className="text-base  hover:text-black">Price</li>
+              <li className="text-base  hover:text-black">Support</li>
             </ul>
           </div>
           <div className=" w-[200px] flex flex-col ">
@@ -48,10 +48,10 @@ const Footer = () => {
             Find Us
             </p>
             <ul className="flex flex-col space-y-4 text-[14px] font-medium text-gray-500">
-              <li className="flex flex-wrap text-base items-center"><span className="m-2"><ImFacebook2 /></span> FaceBook</li>
-              <li className="flex flex-wrap text-base items-center"><span className="m-2"><BsInstagram /></span> Instagram</li>
-              <li className="flex flex-wrap text-base items-center"><span className="m-2"><FaLinkedin /></span> LinkedIn</li>
-              <li className="flex flex-wrap text-base items-center"><span className="m-2"></span>X</li>
+              <li className="flex flex-wrap text-base items-center hover:text-black"><span className="m-2"><ImFacebook2 /></span> FaceBook</li>
+              <li className="flex flex-wrap text-base items-center hover:text-black"><span className="m-2"><BsInstagram /></span> Instagram</li>
+              <li className="flex flex-wrap text-base items-center hover:text-black"><span className="m-2"><FaLinkedin /></span> LinkedIn</li>
+              <li className="flex flex-wrap text-base items-center hover:text-black"><span className="m-2"></span>X</li>
             </ul>
           </div>
           <div className=" w-[200px] flex flex-col ">
@@ -59,9 +59,9 @@ const Footer = () => {
               Legal
             </p>
             <ul className="flex flex-col space-y-4 text-[14px] font-medium text-gray-500">
-              <li className="text-base">Privacy Police</li>
-              <li className="text-base">Term Of Service</li>
-              <li className="text-base">Term Of Use</li>
+              <li className="text-base  hover:text-black">Privacy Police</li>
+              <li className="text-base  hover:text-black">Term Of Service</li>
+              <li className="text-base  hover:text-black">Term Of Use</li>
             </ul>
           </div>
            
@@ -79,7 +79,7 @@ const Footer = () => {
           ></svg>
         </div>
         <div className="mt-4 md:mt-0">
-          <p className="text-sm font-medium text-gray-500">
+          <p className="text-sm font-medium text-gray-500  hover:text-black">
             © 2023 MessThali. All rights reserved.
           </p>
         </div>

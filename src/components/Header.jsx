@@ -83,7 +83,7 @@ const Header = () => {
             </Link>
             <Link
               to={"/forbusiness"}
-              className="text-lg text-textColor border-2 border-black rounded-full p-1 px-2 hover:shadow-black hover:shadow hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer"
+              className="text-lg text-textColor border-2 bg-white border-black rounded-full p-1 px-2 hover:shadow-black hover:shadow hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer"
             >
               For Business
             </Link>
